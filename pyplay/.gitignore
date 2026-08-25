@@ -1,0 +1,38 @@
+# Python cache & build
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDEs and Editors (VS Code)
+.vscode/
+.idea/
+
+# Playwright / Browsers / Cache / Logs
+.pytest_cache/
+playwright-report/
+test-results/
+.auth/
+*.log
+
+# Environment variables / Secrets (חשוב מאוד!)
+.env
