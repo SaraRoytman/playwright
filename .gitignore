@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Environments & Secrets
+venv/
+env/
+.env
+
+# Testing & Logs
+.pytest_cache/
+*.log
+.coverage
+
+# VS Code
+.vscode/
+
+# Playwright / Browser Cache (זה מה שגרם לדליפת המפתחות קודם)
+my_profile/
