@@ -10,7 +10,7 @@ def test_google_persistent():
             slow_mo=500
         )
         
-        page = browser.new_page()
+        page = browser.pages[0]
         page.goto("https://www.google.com/ncr")
         page.get_by_role("combobox", name="Search").fill("playwright python")
         page.keyboard.press("Enter")
