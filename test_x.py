@@ -4,14 +4,14 @@ from playwright.sync_api import expect, sync_playwright
 
 def test_google_persistent():
     with sync_playwright() as p:
-        # פותחים דפדפן ושומרים את נתוני הגלישה בתיקייה מקומית בשם my_profile
+      
         browser = p.chromium.launch_persistent_context(
             user_data_dir="./my_profile", 
             headless=False,
             slow_mo=500
         )
         
-        page = browser.new_page()
+        page = browser.pages[0]
         page.goto("https://www.google.com/ncr")
         page.get_by_role("combobox", name="Search").fill("playwright python")
         page.keyboard.press("Enter")
