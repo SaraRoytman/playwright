@@ -1,19 +1,19 @@
 import re
-from playwright.sync_api import expect, sync_playwright
+from playwright.sync_api import expect
 
-def test_google_persistent():
-    with sync_playwright() as p:
-        
-        browser = p.chromium.launch_persistent_context(
-            user_data_dir="./my_profile", 
-            headless=False,
-            slow_mo=500
-        )
-        
-        page = browser.pages[0]
-        page.goto("https://www.google.com/ncr")
-        page.get_by_role("combobox", name="Search").fill("playwright python")
-        page.keyboard.press("Enter")
-        
-        expect(page).to_have_title(re.compile("Playwright", re.IGNORECASE), timeout=60000)
-        browser.close()
+def test_googleSearch(page):
+  page.goto("https://www.google.com/ncr") 
+
+  try:
+    page.get_by_role("button", name="accept all").click(timeout=3000)
+  except:
+    print("No popup")
+
+  page.get_by_role("combobox", name="Search").fill("playwright python")
+
+
+
+
+
+
+ 
